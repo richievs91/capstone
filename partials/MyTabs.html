@@ -1,0 +1,12 @@
+<h2>My Tabs</h2>	
+
+
+<input type="text" ng-model="guitarTabs">
+	<button ng-click="searchTabs()">Search Tabs</button>
+<div>
+	<ul>
+		<li id="{{tab.id}}" ng-repeat="tab in tabs">
+			{{tab.title}}
+		</li>
+	</ul>
+<div>		

@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "angular": "^1.6.0",
-    "angular-route": "^1.6.0",
+    "angular": "1.5.7",
+    "angular-route": "1.5.7",
     "bootstrap": "^3.3.7",
     "firebase": "^3.6.3",
     "grunt": "^1.0.1",

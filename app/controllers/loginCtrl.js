@@ -1,28 +1,23 @@
-"use strict"; 
+"use strict";
 
-app.controller('loginCtrl', function($scope, AuthFactory, $window){
-	$scope.account = {
-		email: "", 
-		password: "" //could also be null
-	};
+app.controller("LoginCtrl", function($scope, AuthFactory, $window, $location) {
 
-
-	$scope.login = (user) => {
-		// currentUser = user.uid;
-		AuthFactory.loginUser($scope.account)
-		.then( (user) => {
-			$window.location.href = "#/myTabs"; 
-					console.log('user logged in', user.uid);
+  $scope.login = () => {
+  	AuthFactory.loginUser()
+    	.then((user) => {
+    		console.log("hello");
+      	$location.path("/MyTabs");
+      	$scope.$apply();
+        	console.log("You are now logged in");
+        });
+    };
 
 
+$scope.logout = (user) => {
+	AuthFactory.logoutUser()
+		.then((user) => {
+			$window.location.url = "#/";
+				console.log("You have logged out");
 		});
 	};
-		$scope.logout = () => {
-		AuthFactory.logoutUser($scope.account)
-		.then( (user) => {
-			$window.location.href = "#/login"; 
-					console.log('user logged out');
-				});
-			};
-
-	}); 
+});

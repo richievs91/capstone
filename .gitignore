@@ -1,4 +1,4 @@
 .DS_Store
 lib/node_modules
 app/values
-app/values/fb-creds.js 
+app/values/FBCreds.js 
