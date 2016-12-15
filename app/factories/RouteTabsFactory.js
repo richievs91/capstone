@@ -22,6 +22,7 @@ app.factory("TabStorage", function($http, FBCreds) {
 	};
 
 	let postNewTab = (newTab) => {
+		console.log(postNewTab);
 		return new Promise( (resolve, reject) => {
 			$http.post(`${FBCreds.databaseURL}/tabs.json`,
 				angular.toJson(newTab))

@@ -7,7 +7,10 @@ app.config( function($routeProvider, $locationProvider) {
 	.when('/', { 
 		templateUrl: 'partials/login.html',
 		controller: 'LoginCtrl'
-
+	})
+	.when('/SearchTabs', {
+		templateUrl: 'partials/SearchTabs.html',
+		controller: 'SearchTabsCtrl'
 	})
 	.when('/MyTabs', {
 		templateUrl: 'partials/MyTabs.html',
@@ -18,7 +21,7 @@ app.config( function($routeProvider, $locationProvider) {
 		controller: 'MasteredTabsCtrl'
 	})
 	.otherwise('/');
-	$locationProvider.html5Mode(true);
+	// $locationProvider.html5Mode(true);
 });
 
 

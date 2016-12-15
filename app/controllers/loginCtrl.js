@@ -6,7 +6,7 @@ app.controller("LoginCtrl", function($scope, AuthFactory, $window, $location) {
   	AuthFactory.loginUser()
     	.then((user) => {
     		console.log("hello");
-      	$location.path("/MyTabs");
+      	$window.location.href = "#/SearchTabs";
       	$scope.$apply();
         	console.log("You are now logged in");
         });
