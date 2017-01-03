@@ -1,1 +1,10 @@
 <h3>Mastered Tabs</h3>
+
+<div>
+	<ul>
+		<li id="{{tab.id}}" ng-repeat="tab in tabs">
+			<a href="http://www.songsterr.com/a/wa/song?id={{tab.id}}">{{tab.title}}</a>
+			<button class="btn btn-success" ng-click="remove(tab)">Delete</button>
+		</li>
+	</ul>
+	</div>

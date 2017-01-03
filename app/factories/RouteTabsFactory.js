@@ -47,9 +47,24 @@ app.factory("TabStorage", function($http, FBCreds) {
 	});
 	};
 
+	let deleteTab = function removeFromFirebase(deleteID) {
+		// console.log(`${FBCreds.databaseURL}/tab/${deleteID}.json`);
+    return new Promise( (resolve, reject) => {
+			$http.delete(`${FBCreds.databaseURL}/tabs/${deleteID}.json`)
+			// firebase.database().ref('/tab/' + deleteID).remove()
+			.success( (obj) => {
+				// console.log("success", success);
+				resolve(obj);
+			})
+			.error( (error) => {
+				// console.log("error", error);
+				reject(error);
+			});
+		});
+	};
 
 
-	return {getTabs, postNewTab, searchForTabs};
+	return {getTabs, postNewTab, searchForTabs, deleteTab};
 });
 
 

@@ -1,7 +1,20 @@
 "use strict";
 
+app.controller("MyTabsCtrl", function($scope, TabStorage) {
+	TabStorage.getTabs()
+	.then( (tabArray) => {
+		$scope.tabs = tabArray;
+		$scope.$apply();
+	});
 
-app.controller("MyTabsCtrl", function($scope) {
+	$scope.deleteTab = (tab) => {
+		console.log(tab);
+		TabStorage.deleteTab(tab)
+	.then((tab) => {
+		$scope.deleteTab(tab);
+	});
 
+
+	};
 
 });
