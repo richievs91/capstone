@@ -5,7 +5,7 @@
 	<button ng-click="searchTabs()">Search Tabs</button>
 <div>
 	<ul>
-		<li class="{{tab.id}}" ng-repeat="tab in tabs">
+		<li class="{{tab.id}}" ng-repeat="tab in tabs | orderBy : 'title' : false">
 			<a href="http://www.songsterr.com/a/wa/song?id={{tab.id}}">{{tab.title}}</a>
 			<div>
     		<a href="#/MyTabs" class="btn btn-success" role="button" ng-click="addTab(tab)">Save to My Tabs</a>
