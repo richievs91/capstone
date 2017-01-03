@@ -1,11 +1,11 @@
-<h2>Search Tabs</h2>	
+<h2 class="center-align">Search Tabs</h2>	
 
 
-<input type="text" ng-model="guitarTabs">
+<input type="text" ng-model="guitarTabs" placeholder="Search by Artist...">
 	<button ng-click="searchTabs()">Search Tabs</button>
 <div>
 	<ul>
-		<li id="{{tab.id}}" ng-repeat="tab in tabs | orderBy:'tabs'">
+		<li class="{{tab.id}}" ng-repeat="tab in tabs">
 			<a href="http://www.songsterr.com/a/wa/song?id={{tab.id}}">{{tab.title}}</a>
 			<div>
     		<a href="#/MyTabs" class="btn btn-success" role="button" ng-click="addTab(tab)">Save to My Tabs</a>

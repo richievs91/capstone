@@ -7,13 +7,18 @@ app.controller("MyTabsCtrl", function($scope, TabStorage) {
 		$scope.$apply();
 	});
 
+	$scope.addMasteredTab = (tab) => {
+		console.log("add mastered tabs", tab);
+		TabStorage.postNewMasteredTab(tab);
+	};
+
 	$scope.deleteTab = (tab) => {
 		console.log(tab);
 		TabStorage.deleteTab(tab)
 	.then((tab) => {
-		$scope.deleteTab(tab);
+		console.log(tab);
 	});
-
+		$(".tab").remove();
 
 	};
 
